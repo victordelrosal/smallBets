@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmallBets | Victor del Rosal's Builder Portfolio</title>
+    <meta name="description" content="170+ projects. One philosophy: ship fast, learn faster. Explore Victor del Rosal's SmallBets portfolio of AI systems, web apps, games, and tools.">
+    <meta property="og:title" content="SmallBets | Victor del Rosal">
+    <meta property="og:description" content="170+ projects built with the SmallBets philosophy">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #22222e;
+            --text-primary: #f0f0f5;
+            --text-secondary: #9090a0;
+            --text-muted: #606070;
+            --accent-purple: #9333ea;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-green: #22c55e;
+            --accent-orange: #f97316;
+            --accent-pink: #ec4899;
+            --accent-yellow: #eab308;
+            --gradient-1: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #06b6d4 0%, #22c55e 100%);
+            --gradient-3: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+            --border-color: rgba(255,255,255,0.08);
+            --shadow-glow: 0 0 60px rgba(147, 51, 234, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: var(--bg-secondary);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .philosophy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .philosophy-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .philosophy-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Categories Section */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .category-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+
+        .category-tab .count {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .project-card.visible {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .project-header {
+            padding: 24px 24px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .project-status {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        .status-production {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent-green);
+        }
+
+        .status-active {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .status-experiment {
+            background: rgba(147, 51, 234, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .project-content {
+            padding: 20px 24px 24px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(147, 51, 234, 0.1);
+            color: var(--accent-purple);
+            border-radius: 6px;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background: var(--bg-secondary);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .tech-category h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            color: var(--text-secondary);
+        }
+
+        /* Timeline Section */
+        .journey-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .journey-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .journey-text strong {
+            color: var(--text-primary);
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 120px 24px;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                gap: 32px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-tabs {
+                gap: 8px;
+            }
+
+            .category-tab {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">SmallBets</div>
+            <ul class="nav-links">
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#journey">Journey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Always building
+            </div>
+            <h1>170+ Projects.<br><span>One Philosophy.</span></h1>
+            <p class="hero-subtitle">
+                Ship fast. Learn faster. Every project is a small bet on what might work.
+                This is Victor del Rosal's builder portfolio.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-count="170">0</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="9">0</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-label">AI Systems</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">In Production</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Philosophy</span>
+                <h2 class="section-title">The SmallBets Approach</h2>
+                <p class="section-desc">
+                    Instead of one big bet, make many small ones. Each project teaches something.
+                    Some fail. Some succeed. All compound into expertise.
+                </p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card reveal">
+                    <div class="philosophy-icon" style="background: rgba(147, 51, 234, 0.15);">🚀</div>
+                    <h3>Ship First, Perfect Later</h3>
+                    <p>A working prototype today beats a perfect product never. Get it live, get feedback, iterate.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <div class="philosophy-icon" style="background: rgba(59, 130, 246, 0.15);">🧪</div>
+                    <h3>Experiment Constantly</h3>
+                    <p>Every new technology, every new idea gets a small project. The best way to learn is to build.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <div class="philosophy-icon" style="background: rgba(34, 197, 94, 0.15);">📚</div>
+                    <h3>Document Everything</h3>
+                    <p>Each project leaves behind learnings. Failures are just lessons in disguise. Success is reproducible.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <div class="philosophy-icon" style="background: rgba(249, 115, 22, 0.15);">🎯</div>
+                    <h3>Solve Real Problems</h3>
+                    <p>Build what you need. Scratch your own itch. The best products come from genuine necessity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">The Projects</h2>
+                <p class="section-desc">
+                    From AI systems to games, productivity tools to educational platforms.
+                    Click a category to explore.
+                </p>
+            </div>
+
+            <div class="category-tabs reveal">
+                <button class="category-tab active" data-category="all">All <span class="count">170+</span></button>
+                <button class="category-tab" data-category="ai">AI & LLM <span class="count">20+</span></button>
+                <button class="category-tab" data-category="productivity">Productivity <span class="count">11</span></button>
+                <button class="category-tab" data-category="education">Education <span class="count">15+</span></button>
+                <button class="category-tab" data-category="games">Games <span class="count">15+</span></button>
+                <button class="category-tab" data-category="health">Health <span class="count">10</span></button>
+                <button class="category-tab" data-category="business">Business <span class="count">10</span></button>
+                <button class="category-tab" data-category="tools">Dev Tools <span class="count">6</span></button>
+                <button class="category-tab" data-category="web">Web Apps <span class="count">20+</span></button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- AI & LLM Projects -->
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🤖</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Flux</h3>
+                        <p>Cloud-native productivity system with AI-powered notes, tasks, and chat. Built with Next.js and Supabase.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Claude API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🧠</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>CHORUS</h3>
+                        <p>Multi-agent orchestration framework for complex AI workflows. Coordinates multiple LLM agents in harmony.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Multi-Agent</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">Orchestration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">💬</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Clawdis</h3>
+                        <p>WhatsApp gateway for Claude AI. Chat with Claude directly through your favorite messaging app.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WhatsApp</span>
+                            <span class="project-tag">Claude</span>
+                            <span class="project-tag">Gateway</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🗄️</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Claude-mem</h3>
+                        <p>Persistent memory system for Claude. Gives AI assistants long-term context and recall across sessions.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Memory</span>
+                            <span class="project-tag">Context</span>
+                            <span class="project-tag">Claude</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">☀️</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sol</h3>
+                        <p>Intelligent assistant framework with tool use, memory, and multi-modal capabilities.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Framework</span>
+                            <span class="project-tag">Tools</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">✏️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Code Editing Agent</h3>
+                        <p>AI-powered code editor built in Go. Understands context and suggests intelligent edits.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Go</span>
+                            <span class="project-tag">Editor</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🎙️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Speaker Agent</h3>
+                        <p>AI agent that can give presentations and talks autonomously with voice synthesis.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Voice</span>
+                            <span class="project-tag">Agent</span>
+                            <span class="project-tag">Presentations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🔮</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Talk2MyAgent</h3>
+                        <p>Voice-first interface for AI agents. Natural conversation with AI using speech recognition.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Voice</span>
+                            <span class="project-tag">Speech</span>
+                            <span class="project-tag">Interface</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">🏭</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Agentic Code Factory</h3>
+                        <p>Framework for building and deploying autonomous coding agents at scale.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Factory</span>
+                            <span class="project-tag">Agents</span>
+                            <span class="project-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-1);">💎</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gemini Chatbot</h3>
+                        <p>Chat interface for Google's Gemini AI with streaming responses and context management.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Gemini</span>
+                            <span class="project-tag">Google</span>
+                            <span class="project-tag">Chat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Productivity -->
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">📝</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Notes</h3>
+                        <p>Full-featured note-taking app with rich text, tagging, and cloud sync. Personal knowledge management.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Notes</span>
+                            <span class="project-tag">PKM</span>
+                            <span class="project-tag">TipTap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">✅</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Manager</h3>
+                        <p>Kanban-style task management with drag-and-drop, priorities, and deadline tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Tasks</span>
+                            <span class="project-tag">Kanban</span>
+                            <span class="project-tag">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">⏰</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Timesheet</h3>
+                        <p>Time tracking and reporting for freelancers and teams. Visual reports and exports.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Time</span>
+                            <span class="project-tag">Tracking</span>
+                            <span class="project-tag">Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">📋</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lucia PM</h3>
+                        <p>Project management tool with timeline views, team collaboration, and milestone tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Projects</span>
+                            <span class="project-tag">Teams</span>
+                            <span class="project-tag">Timeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">🗒️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sticky Notes</h3>
+                        <p>Desktop sticky notes app with color coding, persistence, and quick capture.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Notes</span>
+                            <span class="project-tag">Quick</span>
+                            <span class="project-tag">Desktop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">🏆</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Insignias</h3>
+                        <p>Achievement and badge system for gamifying productivity. Track milestones and celebrate wins.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Gamification</span>
+                            <span class="project-tag">Badges</span>
+                            <span class="project-tag">Motivation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="productivity">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: var(--gradient-2);">👁️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Oversee</h3>
+                        <p>Project oversight dashboard for tracking multiple initiatives and their health status.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Oversight</span>
+                            <span class="project-tag">Status</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🎓</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>DisruptEd</h3>
+                        <p>Open-source learning management system. Courses, quizzes, progress tracking. Apache 2.0 licensed.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">LMS</span>
+                            <span class="project-tag">Open Source</span>
+                            <span class="project-tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🚀</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>XPAI2 - GenAI Academy</h3>
+                        <p>Full-featured learning management system for AI education. Courses, certifications, and hands-on labs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Academy</span>
+                            <span class="project-tag">GenAI</span>
+                            <span class="project-tag">LMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">📚</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ultimate GenAI Course</h3>
+                        <p>Comprehensive generative AI curriculum with hands-on projects and real-world applications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Course</span>
+                            <span class="project-tag">Curriculum</span>
+                            <span class="project-tag">GenAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🎖️</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>HUMANLIKE MicroDegree</h3>
+                        <p>Micro-credential program for human-AI collaboration skills. Portfolio-based assessment.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">MicroDegree</span>
+                            <span class="project-tag">Credentials</span>
+                            <span class="project-tag">AI Skills</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🏫</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>NewSchool</h3>
+                        <p>Experimental education platform rethinking how learning should work in the AI age.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Education</span>
+                            <span class="project-tag">Innovation</span>
+                            <span class="project-tag">Future</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🎨</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>CSS Masterclass</h3>
+                        <p>Interactive CSS learning with live examples, challenges, and visual feedback.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">Interactive</span>
+                            <span class="project-tag">Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🧪</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>iLab Guru</h3>
+                        <p>Lab-based learning platform for hands-on technical education with guided experiments.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Labs</span>
+                            <span class="project-tag">Hands-on</span>
+                            <span class="project-tag">Technical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">👨‍💻</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>BestDev</h3>
+                        <p>Developer knowledge base and learning resource. Best practices, patterns, and guides.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Knowledge</span>
+                            <span class="project-tag">Dev</span>
+                            <span class="project-tag">Reference</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🌅</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Leaders (Project DAWN)</h3>
+                        <p>Leadership development program for executives navigating the AI transformation.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Leadership</span>
+                            <span class="project-tag">Executive</span>
+                            <span class="project-tag">AI Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="education">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #eab308 100%);">🏆</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>CHAMPS</h3>
+                        <p>Champions program for AI education ambassadors. Train-the-trainer methodology.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Champions</span>
+                            <span class="project-tag">Training</span>
+                            <span class="project-tag">Ambassadors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Games -->
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🚀</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Asteroid</h3>
+                        <p>Classic arcade game reimagined with modern graphics, particle effects, and power-ups.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Canvas</span>
+                            <span class="project-tag">Arcade</span>
+                            <span class="project-tag">Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🛸</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>NanoShip</h3>
+                        <p>Space shooter with neon aesthetics, enemy waves, and score chasing. Pure vanilla JS.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Shooter</span>
+                            <span class="project-tag">Neon</span>
+                            <span class="project-tag">Retro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">💡</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lumen Game</h3>
+                        <p>Light-based puzzle game. Guide beams through prisms and mirrors to solve challenges.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Puzzle</span>
+                            <span class="project-tag">Light</span>
+                            <span class="project-tag">Physics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🏓</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Pong</h3>
+                        <p>The classic reimagined. Two-player local multiplayer with smooth controls and effects.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Classic</span>
+                            <span class="project-tag">Multiplayer</span>
+                            <span class="project-tag">Retro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🏰</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tower Defense</h3>
+                        <p>Strategic tower placement game with multiple tower types and enemy waves.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Strategy</span>
+                            <span class="project-tag">Tower</span>
+                            <span class="project-tag">Defense</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">✨</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Particle Galaxies</h3>
+                        <p>Interactive particle simulation with gravitational physics. Create and destroy galaxies.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Simulation</span>
+                            <span class="project-tag">Particles</span>
+                            <span class="project-tag">Interactive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="games">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🌌</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cosmic Harmony</h3>
+                        <p>Meditative space experience with generative visuals and ambient soundscapes.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Meditative</span>
+                            <span class="project-tag">Generative</span>
+                            <span class="project-tag">Audio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health -->
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">💪</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>5025 Fitness Tracker</h3>
+                        <p>50 push-ups by 2025 goal tracker. Daily logging, streaks, and progress visualization.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Fitness</span>
+                            <span class="project-tag">Goals</span>
+                            <span class="project-tag">Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">🔥</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>VDR Streaks</h3>
+                        <p>Habit tracking with streak mechanics. Build consistency through gamification.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Habits</span>
+                            <span class="project-tag">Streaks</span>
+                            <span class="project-tag">Gamification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">🧘</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Breathe</h3>
+                        <p>Guided breathing and meditation app with visual cues and session tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Meditation</span>
+                            <span class="project-tag">Breathing</span>
+                            <span class="project-tag">Wellness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">🧠</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Healthy Brain</h3>
+                        <p>Cognitive health tracking with memory exercises and brain training activities.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Cognitive</span>
+                            <span class="project-tag">Brain</span>
+                            <span class="project-tag">Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">🥗</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Protein Tracker</h3>
+                        <p>Nutrition logging focused on protein intake. Simple, focused macro tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Nutrition</span>
+                            <span class="project-tag">Protein</span>
+                            <span class="project-tag">Macros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="health">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);">🤾</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Handball Club Manager</h3>
+                        <p>Team management for handball clubs. Rosters, schedules, stats, and communications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Sports</span>
+                            <span class="project-tag">Management</span>
+                            <span class="project-tag">Teams</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business -->
+                <div class="project-card visible" data-category="business">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);">📦</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Anboxify</h3>
+                        <p>Subscription box management platform. Inventory, subscriptions, and fulfillment tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Subscription</span>
+                            <span class="project-tag">E-commerce</span>
+                            <span class="project-tag">SaaS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="business">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);">👥</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>SupBoard</h3>
+                        <p>Supervision and mentoring platform. Session scheduling, notes, and progress tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Supervision</span>
+                            <span class="project-tag">Mentoring</span>
+                            <span class="project-tag">Professional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="business">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);">❤️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>CausesHub</h3>
+                        <p>Platform connecting causes with supporters. Fundraising, awareness, and community.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Nonprofit</span>
+                            <span class="project-tag">Causes</span>
+                            <span class="project-tag">Community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="business">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);">🌳</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Viral Refer Tree</h3>
+                        <p>Referral tracking system with tree visualization. See how your network grows.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Referrals</span>
+                            <span class="project-tag">Growth</span>
+                            <span class="project-tag">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="business">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);">📊</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Widget Sales</h3>
+                        <p>Embeddable sales widgets for websites. Lead capture, pricing tables, and analytics.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Widgets</span>
+                            <span class="project-tag">Sales</span>
+                            <span class="project-tag">Embeddable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dev Tools -->
+                <div class="project-card visible" data-category="tools">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">📄</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>PDF Compressor</h3>
+                        <p>Efficient PDF compression tool. Reduce file sizes while maintaining quality.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PDF</span>
+                            <span class="project-tag">Utility</span>
+                            <span class="project-tag">Compression</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="tools">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">✂️</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>PDF Splitter</h3>
+                        <p>Split PDFs by page ranges. Extract specific pages or divide into multiple files.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PDF</span>
+                            <span class="project-tag">Split</span>
+                            <span class="project-tag">Utility</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="tools">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">📈</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Claude Usage Monitor</h3>
+                        <p>Track Claude API usage and costs. Visualize token consumption and spending trends.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Monitoring</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="tools">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">🔌</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>MyJS Toggle</h3>
+                        <p>Browser extension to toggle JavaScript on/off per site. Debug and test without JS.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Extension</span>
+                            <span class="project-tag">Debug</span>
+                            <span class="project-tag">Browser</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="tools">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">⏰</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dead Man's Switch</h3>
+                        <p>Safety application that triggers actions if you don't check in. Automated fallback system.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Safety</span>
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">Failsafe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Apps -->
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🌐</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>VictorDelRosal.com</h3>
+                        <p>Personal website and portfolio. Professional presence with project showcases.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Portfolio</span>
+                            <span class="project-tag">Personal</span>
+                            <span class="project-tag">Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">📖</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>HUMANLIKE Book</h3>
+                        <p>Landing page and resources for the HUMANLIKE book on human-AI collaboration.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Book</span>
+                            <span class="project-tag">Landing</span>
+                            <span class="project-tag">Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🤖</div>
+                        <span class="project-status status-production">Production</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Agentive</h3>
+                        <p>AI consulting agency website. Service offerings, case studies, and contact.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Agency</span>
+                            <span class="project-tag">Consulting</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🎭</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Catharsis</h3>
+                        <p>The AI Reckoning Experience. Interactive exploration of AI's impact on work and life.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Interactive</span>
+                            <span class="project-tag">Experience</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🎤</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>SpeakGenAI</h3>
+                        <p>Speaking engagement platform for GenAI topics. Talks, workshops, and keynotes.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Speaking</span>
+                            <span class="project-tag">Events</span>
+                            <span class="project-tag">GenAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🌌</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cosmos Daily</h3>
+                        <p>Daily astronomy and space content. Curated space news and stunning imagery.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Space</span>
+                            <span class="project-tag">Daily</span>
+                            <span class="project-tag">Content</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🦎</div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Coco y Mango</h3>
+                        <p>Children's stories in Spanish about two lizard friends in Mexico. Illustration prompts included.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Stories</span>
+                            <span class="project-tag">Spanish</span>
+                            <span class="project-tag">Children</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">✈️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>TravX Mexico</h3>
+                        <p>Travel guide and recommendations for Mexico. Destinations, tips, and local insights.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Travel</span>
+                            <span class="project-tag">Mexico</span>
+                            <span class="project-tag">Guide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🎄</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Xmas Tree</h3>
+                        <p>Interactive Christmas tree with decorations, lights, and holiday cheer.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Holiday</span>
+                            <span class="project-tag">Interactive</span>
+                            <span class="project-tag">Fun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card visible" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">🖥️</div>
+                        <span class="project-status status-experiment">Experiment</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Apollo XT Terminal</h3>
+                        <p>Retro-style terminal interface. Command-line aesthetics for modern web apps.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Terminal</span>
+                            <span class="project-tag">Retro</span>
+                            <span class="project-tag">UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack" id="stack">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Technology</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-desc">
+                    The tools and technologies powering these 170+ projects.
+                </p>
+            </div>
+            <div class="tech-grid reveal">
+                <div class="tech-category">
+                    <h4>Frontend</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Next.js</span>
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Astro</span>
+                        <span class="tech-item">Tailwind</span>
+                        <span class="tech-item">Three.js</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Backend</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Express</span>
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">Go</span>
+                        <span class="tech-item">Python</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Database</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Supabase</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">Firebase</span>
+                        <span class="tech-item">SQLite</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>AI/ML</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Claude API</span>
+                        <span class="tech-item">OpenAI</span>
+                        <span class="tech-item">Gemini</span>
+                        <span class="tech-item">LangChain</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Tools</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Git</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Vercel</span>
+                        <span class="tech-item">Claude Code</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Testing</h4>
+                    <div class="tech-items">
+                        <span class="tech-item">Vitest</span>
+                        <span class="tech-item">Jest</span>
+                        <span class="tech-item">Playwright</span>
+                        <span class="tech-item">Pytest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey" id="journey">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Story</span>
+                <h2 class="section-title">The Journey</h2>
+            </div>
+            <div class="journey-text reveal">
+                <p>
+                    <strong>SmallBets</strong> started as a simple idea: instead of waiting for the perfect project,
+                    just start building. Every day. Every week. Compound those small experiments.
+                </p>
+                <p>
+                    Some projects took an afternoon. Others evolved over months. A few became production systems
+                    used by real people. Many "failed" - but each failure was a lesson that made the next project better.
+                </p>
+                <p>
+                    The result? <strong>170+ projects</strong> spanning AI systems, educational platforms, games,
+                    productivity tools, and more. Not because quantity matters, but because
+                    <strong>shipping is the ultimate teacher</strong>.
+                </p>
+                <p>
+                    This portfolio isn't about impressing anyone. It's proof that consistent action,
+                    small bets, and relentless curiosity compound into something meaningful.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Let's Build Something</h2>
+            <p>Interested in collaboration, consulting, or just want to chat about building?</p>
+            <div class="cta-buttons">
+                <a href="https://victordelrosal.com" class="btn btn-primary">
+                    Visit VictorDelRosal.com
+                </a>
+                <a href="https://linkedin.com/in/victordelrosal" class="btn btn-secondary">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Built with <span style="color: var(--accent-purple);">♥</span> by Victor del Rosal</p>
+            <p style="margin-top: 8px;">SmallBets Portfolio • 2024-2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering
+        const tabs = document.querySelectorAll('.category-tab');
+        const cards = document.querySelectorAll('.project-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Filter cards
+                cards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.add('visible');
+                    } else {
+                        card.classList.remove('visible');
+                    }
+                });
+            });
+        });
+
+        // Number counter animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 100;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.dataset.count;
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    const current = +counter.innerText;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + '+';
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        // Intersection Observer for hero
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroSection = document.querySelector('.hero');
+        heroObserver.observe(heroSection);
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
