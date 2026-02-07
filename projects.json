@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "totalProjects": 48,
+    "lastUpdated": "2026-02-07",
+    "categories": [
+      { "id": "ai", "name": "AI & LLM", "count": 10 },
+      { "id": "productivity", "name": "Productivity", "count": 6 },
+      { "id": "education", "name": "Education", "count": 10 },
+      { "id": "games", "name": "Games", "count": 7 },
+      { "id": "health", "name": "Health", "count": 6 },
+      { "id": "business", "name": "Business", "count": 4 },
+      { "id": "tools", "name": "Dev Tools", "count": 4 },
+      { "id": "web", "name": "Web Apps", "count": 8 }
+    ]
+  },
+  "projects": [
+    {
+      "name": "Flux",
+      "description": "Cloud-native productivity system with AI-powered notes, tasks, and chat. Built with Next.js and Supabase.",
+      "category": "ai",
+      "status": "production",
+      "icon": "\ud83e\udd16",
+      "tags": ["Next.js", "Supabase", "Claude API"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "CHORUS",
+      "description": "Multi-agent orchestration framework for complex AI workflows. Coordinates multiple LLM agents in harmony.",
+      "category": "ai",
+      "status": "production",
+      "icon": "\ud83e\udde0",
+      "tags": ["Multi-Agent", "LLM", "Orchestration"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Clawdis",
+      "description": "WhatsApp gateway for Claude AI. Chat with Claude directly through your favorite messaging app.",
+      "category": "ai",
+      "status": "active",
+      "icon": "\ud83d\udcac",
+      "tags": ["WhatsApp", "Claude", "Gateway"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Claude-mem",
+      "description": "Persistent memory system for Claude. Gives AI assistants long-term context and recall across sessions.",
+      "category": "ai",
+      "status": "active",
+      "icon": "\ud83d\uddc4\ufe0f",
+      "tags": ["Memory", "Context", "Claude"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Sol",
+      "description": "Intelligent assistant framework with tool use, memory, and multi-modal capabilities.",
+      "category": "ai",
+      "status": "active",
+      "icon": "\u2600\ufe0f",
+      "tags": ["Framework", "Tools", "AI"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Code Editing Agent",
+      "description": "AI-powered code editor built in Go. Understands context and suggests intelligent edits.",
+      "category": "ai",
+      "status": "experiment",
+      "icon": "\u270f\ufe0f",
+      "tags": ["Go", "Editor", "AI"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Speaker Agent",
+      "description": "AI agent that can give presentations and talks autonomously with voice synthesis.",
+      "category": "ai",
+      "status": "experiment",
+      "icon": "\ud83c\udf99\ufe0f",
+      "tags": ["Voice", "Agent", "Presentations"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Talk2MyAgent",
+      "description": "Voice-first interface for AI agents. Natural conversation with AI using speech recognition.",
+      "category": "ai",
+      "status": "experiment",
+      "icon": "\ud83d\udd2e",
+      "tags": ["Voice", "Speech", "Interface"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Agentic Code Factory",
+      "description": "Framework for building and deploying autonomous coding agents at scale.",
+      "category": "ai",
+      "status": "experiment",
+      "icon": "\ud83c\udfed",
+      "tags": ["Factory", "Agents", "Automation"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Gemini Chatbot",
+      "description": "Chat interface for Google's Gemini AI with streaming responses and context management.",
+      "category": "ai",
+      "status": "experiment",
+      "icon": "\ud83d\udc8e",
+      "tags": ["Gemini", "Google", "Chat"],
+      "gradient": "linear-gradient(135deg, #9333ea 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Notes",
+      "description": "Full-featured note-taking app with rich text, tagging, and cloud sync. Personal knowledge management.",
+      "category": "productivity",
+      "status": "production",
+      "icon": "\ud83d\udcdd",
+      "tags": ["Notes", "PKM", "TipTap"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "Task Manager",
+      "description": "Kanban-style task management with drag-and-drop, priorities, and deadline tracking.",
+      "category": "productivity",
+      "status": "active",
+      "icon": "\u2705",
+      "tags": ["Tasks", "Kanban", "React"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "Timesheet",
+      "description": "Time tracking and reporting for freelancers and teams. Visual reports and exports.",
+      "category": "productivity",
+      "status": "active",
+      "icon": "\u23f0",
+      "tags": ["Time", "Tracking", "Reports"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "Sticky Notes",
+      "description": "Desktop sticky notes app with color coding, persistence, and quick capture.",
+      "category": "productivity",
+      "status": "experiment",
+      "icon": "\ud83d\uddd2\ufe0f",
+      "tags": ["Notes", "Quick", "Desktop"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "Insignias",
+      "description": "Achievement and badge system for gamifying productivity. Track milestones and celebrate wins.",
+      "category": "productivity",
+      "status": "experiment",
+      "icon": "\ud83c\udfc6",
+      "tags": ["Gamification", "Badges", "Motivation"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "Oversee",
+      "description": "Project oversight dashboard for tracking multiple initiatives and their health status.",
+      "category": "productivity",
+      "status": "experiment",
+      "icon": "\ud83d\udc41\ufe0f",
+      "tags": ["Dashboard", "Oversight", "Status"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #22c55e 100%)"
+    },
+    {
+      "name": "DisruptEd",
+      "description": "Open-source learning management system. Courses, quizzes, progress tracking. Apache 2.0 licensed.",
+      "category": "education",
+      "status": "production",
+      "icon": "\ud83c\udf93",
+      "tags": ["LMS", "Open Source", "Education"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "XPAI2 - GenAI Academy",
+      "description": "Full-featured learning management system for AI education. Courses, certifications, and hands-on labs.",
+      "category": "education",
+      "status": "production",
+      "icon": "\ud83d\ude80",
+      "tags": ["Academy", "GenAI", "LMS"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "Ultimate GenAI Course",
+      "description": "Comprehensive generative AI curriculum with hands-on projects and real-world applications.",
+      "category": "education",
+      "status": "production",
+      "icon": "\ud83d\udcda",
+      "tags": ["Course", "Curriculum", "GenAI"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "HUMANLIKE MicroDegree",
+      "description": "Micro-credential program for human-AI collaboration skills. Portfolio-based assessment.",
+      "category": "education",
+      "status": "active",
+      "icon": "\ud83c\udf96\ufe0f",
+      "tags": ["MicroDegree", "Credentials", "AI Skills"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "NewSchool",
+      "description": "Experimental education platform rethinking how learning should work in the AI age.",
+      "category": "education",
+      "status": "active",
+      "icon": "\ud83c\udfeb",
+      "tags": ["Education", "Innovation", "Future"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "CSS Masterclass",
+      "description": "Interactive CSS learning with live examples, challenges, and visual feedback.",
+      "category": "education",
+      "status": "experiment",
+      "icon": "\ud83c\udfa8",
+      "tags": ["CSS", "Interactive", "Learning"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "iLab Guru",
+      "description": "Lab-based learning platform for hands-on technical education with guided experiments.",
+      "category": "education",
+      "status": "experiment",
+      "icon": "\ud83e\uddea",
+      "tags": ["Labs", "Hands-on", "Technical"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "BestDev",
+      "description": "Developer knowledge base and learning resource. Best practices, patterns, and guides.",
+      "category": "education",
+      "status": "active",
+      "icon": "\ud83d\udc68\u200d\ud83d\udcbb",
+      "tags": ["Knowledge", "Dev", "Reference"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "AI Leaders (Project DAWN)",
+      "description": "Leadership development program for executives navigating the AI transformation.",
+      "category": "education",
+      "status": "active",
+      "icon": "\ud83c\udf05",
+      "tags": ["Leadership", "Executive", "AI Strategy"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "CHAMPS",
+      "description": "Champions program for AI education ambassadors. Train-the-trainer methodology.",
+      "category": "education",
+      "status": "active",
+      "icon": "\ud83c\udfc6",
+      "tags": ["Champions", "Training", "Ambassadors"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #eab308 100%)"
+    },
+    {
+      "name": "Asteroid",
+      "description": "Classic arcade game reimagined with modern graphics, particle effects, and power-ups.",
+      "category": "games",
+      "status": "production",
+      "icon": "\ud83d\ude80",
+      "tags": ["Canvas", "Arcade", "Classic"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "NanoShip",
+      "description": "Space shooter with neon aesthetics, enemy waves, and score chasing. Pure vanilla JS.",
+      "category": "games",
+      "status": "production",
+      "icon": "\ud83d\udef8",
+      "tags": ["Shooter", "Neon", "Retro"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Lumen Game",
+      "description": "Light-based puzzle game. Guide beams through prisms and mirrors to solve challenges.",
+      "category": "games",
+      "status": "production",
+      "icon": "\ud83d\udca1",
+      "tags": ["Puzzle", "Light", "Physics"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Pong",
+      "description": "The classic reimagined. Two-player local multiplayer with smooth controls and effects.",
+      "category": "games",
+      "status": "active",
+      "icon": "\ud83c\udfd3",
+      "tags": ["Classic", "Multiplayer", "Retro"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Tower Defense",
+      "description": "Strategic tower placement game with multiple tower types and enemy waves.",
+      "category": "games",
+      "status": "experiment",
+      "icon": "\ud83c\udff0",
+      "tags": ["Strategy", "Tower", "Defense"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Particle Galaxies",
+      "description": "Interactive particle simulation with gravitational physics. Create and destroy galaxies.",
+      "category": "games",
+      "status": "experiment",
+      "icon": "\u2728",
+      "tags": ["Simulation", "Particles", "Interactive"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Cosmic Harmony",
+      "description": "Meditative space experience with generative visuals and ambient soundscapes.",
+      "category": "games",
+      "status": "experiment",
+      "icon": "\ud83c\udf0c",
+      "tags": ["Meditative", "Generative", "Audio"],
+      "gradient": "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "5025 Fitness Tracker",
+      "description": "50 push-ups by 2025 goal tracker. Daily logging, streaks, and progress visualization.",
+      "category": "health",
+      "status": "production",
+      "icon": "\ud83d\udcaa",
+      "tags": ["Fitness", "Goals", "Tracking"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "VDR Streaks",
+      "description": "Habit tracking with streak mechanics. Build consistency through gamification.",
+      "category": "health",
+      "status": "active",
+      "icon": "\ud83d\udd25",
+      "tags": ["Habits", "Streaks", "Gamification"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "Breathe",
+      "description": "Guided breathing and meditation app with visual cues and session tracking.",
+      "category": "health",
+      "status": "active",
+      "icon": "\ud83e\uddd8",
+      "tags": ["Meditation", "Breathing", "Wellness"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "Healthy Brain",
+      "description": "Cognitive health tracking with memory exercises and brain training activities.",
+      "category": "health",
+      "status": "experiment",
+      "icon": "\ud83e\udde0",
+      "tags": ["Cognitive", "Brain", "Training"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "Protein Tracker",
+      "description": "Nutrition logging focused on protein intake. Simple, focused macro tracking.",
+      "category": "health",
+      "status": "experiment",
+      "icon": "\ud83e\udd57",
+      "tags": ["Nutrition", "Protein", "Macros"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "Handball Club Manager",
+      "description": "Team management for handball clubs. Rosters, schedules, stats, and communications.",
+      "category": "health",
+      "status": "production",
+      "icon": "\ud83e\udd3e",
+      "tags": ["Sports", "Management", "Teams"],
+      "gradient": "linear-gradient(135deg, #22c55e 0%, #06b6d4 100%)"
+    },
+    {
+      "name": "SupBoard",
+      "description": "Supervision and mentoring platform. Session scheduling, notes, and progress tracking.",
+      "category": "business",
+      "status": "active",
+      "icon": "\ud83d\udc65",
+      "tags": ["Supervision", "Mentoring", "Professional"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)"
+    },
+    {
+      "name": "CausesHub",
+      "description": "Platform connecting causes with supporters. Fundraising, awareness, and community.",
+      "category": "business",
+      "status": "experiment",
+      "icon": "\u2764\ufe0f",
+      "tags": ["Nonprofit", "Causes", "Community"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)"
+    },
+    {
+      "name": "Viral Refer Tree",
+      "description": "Referral tracking system with tree visualization. See how your network grows.",
+      "category": "business",
+      "status": "experiment",
+      "icon": "\ud83c\udf33",
+      "tags": ["Referrals", "Growth", "Visualization"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)"
+    },
+    {
+      "name": "Widget Sales",
+      "description": "Embeddable sales widgets for websites. Lead capture, pricing tables, and analytics.",
+      "category": "business",
+      "status": "experiment",
+      "icon": "\ud83d\udcca",
+      "tags": ["Widgets", "Sales", "Embeddable"],
+      "gradient": "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)"
+    },
+    {
+      "name": "PDF Compressor",
+      "description": "Efficient PDF compression tool. Reduce file sizes while maintaining quality.",
+      "category": "tools",
+      "status": "production",
+      "icon": "\ud83d\udcc4",
+      "tags": ["PDF", "Utility", "Compression"],
+      "gradient": "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "PDF Splitter",
+      "description": "Split PDFs by page ranges. Extract specific pages or divide into multiple files.",
+      "category": "tools",
+      "status": "production",
+      "icon": "\u2702\ufe0f",
+      "tags": ["PDF", "Split", "Utility"],
+      "gradient": "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Claude Usage Monitor",
+      "description": "Track Claude API usage and costs. Visualize token consumption and spending trends.",
+      "category": "tools",
+      "status": "active",
+      "icon": "\ud83d\udcc8",
+      "tags": ["Monitoring", "API", "Analytics"],
+      "gradient": "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "Dead Man's Switch",
+      "description": "Safety application that triggers actions if you don't check in. Automated fallback system.",
+      "category": "tools",
+      "status": "experiment",
+      "icon": "\u23f0",
+      "tags": ["Safety", "Automation", "Failsafe"],
+      "gradient": "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+    },
+    {
+      "name": "VictorDelRosal.com",
+      "description": "Personal website and portfolio. Professional presence with project showcases.",
+      "category": "web",
+      "status": "production",
+      "icon": "\ud83c\udf10",
+      "tags": ["Portfolio", "Personal", "Web"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "HUMANLIKE Book",
+      "description": "Landing page and resources for the HUMANLIKE book on human-AI collaboration.",
+      "category": "web",
+      "status": "production",
+      "icon": "\ud83d\udcd6",
+      "tags": ["Book", "Landing", "Marketing"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Agentive",
+      "description": "AI consulting agency website. Service offerings, case studies, and contact.",
+      "category": "web",
+      "status": "production",
+      "icon": "\ud83e\udd16",
+      "tags": ["Agency", "Consulting", "AI"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "SpeakGenAI",
+      "description": "Speaking engagement platform for GenAI topics. Talks, workshops, and keynotes.",
+      "category": "web",
+      "status": "active",
+      "icon": "\ud83c\udf99\ufe0f",
+      "tags": ["Speaking", "Events", "GenAI"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Cosmos Daily",
+      "description": "Daily astronomy and space content. Curated space news and stunning imagery.",
+      "category": "web",
+      "status": "active",
+      "icon": "\ud83c\udf0c",
+      "tags": ["Space", "Daily", "Content"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Coco y Mango",
+      "description": "Children's stories in Spanish about two lizard friends in Mexico. Illustration prompts included.",
+      "category": "web",
+      "status": "active",
+      "icon": "\ud83e\udd8e",
+      "tags": ["Stories", "Spanish", "Children"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Xmas Tree",
+      "description": "Interactive Christmas tree with decorations, lights, and holiday cheer.",
+      "category": "web",
+      "status": "experiment",
+      "icon": "\ud83c\udf84",
+      "tags": ["Holiday", "Interactive", "Fun"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    },
+    {
+      "name": "Apollo XT Terminal",
+      "description": "Retro-style terminal interface. Command-line aesthetics for modern web apps.",
+      "category": "web",
+      "status": "experiment",
+      "icon": "\ud83d\udda5\ufe0f",
+      "tags": ["Terminal", "Retro", "UI"],
+      "gradient": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)"
+    }
+  ]
+}
